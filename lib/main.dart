@@ -11,7 +11,9 @@ import 'package:sport_live/Screens/Test_tournament/teams.dart';
 import 'package:sport_live/Screens/Wallet/add_cash.dart';
 import 'package:sport_live/Screens/Wallet/total_balance.dart';
 import 'package:sport_live/Screens/add_player.dart';
+import 'package:sport_live/Screens/login_screen.dart';
 import 'package:sport_live/Screens/new_match_setup.dart';
+import 'package:sport_live/Screens/new_team_setup.dart';
 import 'package:sport_live/Screens/tabbar_screen.dart';
 import 'package:sport_live/Screens/tournamanent.dart';
 
@@ -35,7 +37,7 @@ class MyApp extends StatelessWidget {
           return GetMaterialApp(
             debugShowCheckedModeBanner: false,
             theme: AllCoustomTheme.getThemeData(),
-            home: const NavBarScreen(),
+            home: const LoginView(),
           );
         });
   }

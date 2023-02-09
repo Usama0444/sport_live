@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:sport_live/Screens/new_team_setup.dart';
+import 'package:sport_live/constant/themes.dart';
 
 class AllTeams extends StatefulWidget {
   const AllTeams({super.key});
@@ -13,21 +16,36 @@ class AllTeams extends StatefulWidget {
 class _AllTeamsState extends State<AllTeams> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Column(
-        children: [
-          Text(
-            '17 Teams',
-            style: TextStyle(color: Colors.grey, fontSize: 30.sp),
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        floatingActionButton: FloatingActionButton.extended(
+          backgroundColor: AllCoustomTheme.getThemeData().primaryColor,
+          onPressed: () {
+            Get.to(TeamSetup());
+          },
+          label: Text(
+            'Create Team',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 16.sp,
+            ),
           ),
-          Expanded(
-              child: ListView.builder(
-                  itemCount: 17,
-                  itemBuilder: (context, index) {
-                    return myCard();
-                  }))
-        ],
+        ),
+        body: Column(
+          children: [
+            Text(
+              '17 Teams',
+              style: TextStyle(color: Colors.grey, fontSize: 30.sp),
+            ),
+            Expanded(
+                child: ListView.builder(
+                    itemCount: 17,
+                    itemBuilder: (context, index) {
+                      return myCard();
+                    }))
+          ],
+        ),
       ),
     );
   }
